@@ -13,15 +13,14 @@ for (i = 0; i < y; i++) {
     b.push(i);
 }
 
+let items = a.concat(b);
+
 function shfl(array) {
     for (let g = array.length - 1; g > 0; g--) {
         const j = Math.floor(Math.random() *(g + 1));
         [array[g], array[j]] = [array[j], array[g]];
     }
 }
-
-
-let items = a.concat(b);
 
 shfl(items);
 
@@ -38,6 +37,7 @@ let second = null;
 function pick() {
 
     if (this === first) return;
+    
     if (first === null) {
         this.innerHTML = this.id;
         first = this;
