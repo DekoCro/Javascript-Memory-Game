@@ -9,3 +9,9 @@ section {
     display: flex;
     flex-direction: row;
 }
+
+body {
+    color: white;
+    font-size: 2em;
+    
+}
