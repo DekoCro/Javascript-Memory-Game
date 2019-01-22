@@ -19,10 +19,11 @@ function shfl(array) {
         [array[g], array[j]] = [array[j], array[g]];
     }
 }
-shfl(a);
-shfl(b);
+
 
 let items = a.concat(b);
+
+shfl(items);
 
 
 let all = document.getElementsByTagName("div");
@@ -37,7 +38,6 @@ let second = null;
 function pick() {
 
     if (this === first) return;
-    
     if (first === null) {
         this.innerHTML = this.id;
         first = this;
@@ -48,7 +48,7 @@ function pick() {
     }
 }
 
-function check() {
+const check = () => {
     if (first.id === second.id) {
         deletePicks();
         return;
@@ -57,14 +57,13 @@ function check() {
     setTimeout(unflip, 500);
 }
 
-function unflip() {
+const unflip = () => {
     first.innerHTML = " ";
     second.innerHTML = " ";
     resetFirstSecond();
 }
 
-
-function deletePicks() {
+const deletePicks = () => {
     first.classList.add('disabled');
     first.removeEventListener('click', pick);
     second.classList.add('disabled');
@@ -72,7 +71,7 @@ function deletePicks() {
     resetFirstSecond();
 }
 
-function resetFirstSecond() {
+const resetFirstSecond = () => {
     first = null;
     second = null;
 }
@@ -81,14 +80,3 @@ function resetFirstSecond() {
 for (i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", pick);
 }
-
-// const displayCard = function() {
-//     //let e = document.getElementById(this);
-//     this.innerHTML = this.id;
-//     count++;
-//     // console.log(this.id);
-// }
-
-// const hideCard = function() {
-//     this.innerHTML = "";
-// }
