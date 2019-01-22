@@ -1,0 +1,11 @@
+
+section div {
+    margin: .5em;
+    height: 10vmin;
+    width: 10vmin;
+    background-color: red;
+}
+section {
+    display: flex;
+    flex-direction: row;
+}

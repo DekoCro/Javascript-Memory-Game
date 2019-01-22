@@ -1,2 +1,2 @@
-# Javascrpt
-Cardgame
+# card-game
+Memory
